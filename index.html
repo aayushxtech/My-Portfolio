@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <style>
+      .scroll-animation {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .scroll-animation.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="/index.html" class="logo">Aayush.</a>
+        <nav class="nav-bar">
+          <a href="#about-me">About</a>
+          <a href="#skills">Skills</a>
+          <a href="resume.html">Resume</a>
+          <a href="#services">Expertise</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero scroll-animation">
+      <div class="hero-text">
+        <h1>Hi, I'm <span class="name">Aayush Samal</span></h1>
+        <h3>Aspiring Software Developer</h3>
+        <div class="cta-buttons">
+          <a href="#contact" class="cta-btn">Contact Me</a>
+          <a href="/resume.html" class="cta-btn">Resume</a>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="https://instagram.com" target="_blank"
+          ><i class="bx bxl-instagram-alt"></i
+        ></a>
+        <a href="https://twitter.com" target="_blank"
+          ><i class="bx bxl-twitter"></i
+        ></a>
+        <a href="https://github.com/ASCode167" target="_blank"
+          ><i class="bx bxl-github"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/aayush-samal/" target="_blank"
+          ><i class="bx bxl-linkedin-square"></i
+        ></a>
+      </div>
+      <div class="hero-image">
+        <img src="assets/Aayush Samal img.jpg" alt="aayush-samal" />
+      </div>
+    </section>
+
+    <section class="about-me scroll-animation" id="about-me">
+      <div class="about-me-text">
+        <h2>About Me</h2>
+        <p>
+          I am a software developer with a passion for creating innovative
+          solutions. I have experience in developing web applications using
+          modern technologies. I am always eager to learn new technologies and
+          improve my skills.
+        </p>
+      </div>
+    </section>
+    <section class="skills scroll-animation" id="skills">
+      <div class="skills-text">
+        <h2>Skills</h2>
+        <div class="skills-list">
+          <div class="skill">
+            <i class="bx bxl-html5"></i>
+            <p>HTML</p>
+          </div>
+          <div class="skill">
+            <i class="bx bxl-css3"></i>
+            <p>CSS</p>
+          </div>
+          <div class="skill">
+            <i class="bx bxl-javascript"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="skill">
+            <i class="bx bxl-react"></i>
+            <p>React</p>
+          </div>
+          <div class="skill">
+            <i class="bx bxl-django"></i>
+            <p>Django</p>
+          </div>
+          <div class="skill">
+            <i class="bx bxl-python"></i>
+            <p>Python</p>
+          </div>
+          <div class="skill">
+            <i class="bx bxl-c-plus-plus"></i>
+            <p>C++</p>
+          </div>
+          <div class="skill">
+            <i class="bx bxl-java"></i>
+            <p>Java</p>
+          </div>
+          <div class="skill">
+            <i class="bx bxl-flask"></i>
+            <p>Flask</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services scroll-animation" id="services">
+      <div class="services-text">
+        <h2>My Expertise</h2>
+        <div class="services-list">
+          <div class="service">
+            <i class="bx bx-code-alt"></i>
+            <h3>Web Development</h3>
+          </div>
+          <div class="service">
+            <i class="bx bx-code-block"></i>
+            <h3>Full Stack Development</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="testimonials scroll-animation" id="testimonials">
+      <div class="testimonials-text">
+        <h2>Testimonials</h2>
+        <div class="testimonials-list">
+          <div class="testimonial">
+            <p>
+              "Aayush is a talented developer who is always eager to learn new
+              technologies. He is a great team player and always delivers
+              high-quality work."
+            </p>
+            <h3>John Doe</h3>
+          </div>
+          <div class="testimonial">
+            <p>
+              "Working with Aayush has been a pleasure. He is very knowledgeable
+              and always willing to help."
+            </p>
+            <h3>Jane Smith</h3>
+          </div>
+          <div class="testimonial">
+            <p>
+              "Aayush's work ethic and dedication are truly commendable. He
+              always goes above and beyond to ensure the success of the
+              project."
+            </p>
+            <h3>Michael Brown</h3>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="contact scroll-animation" id="contact">
+      <div class="contact-text">
+        <h2>Contact Me</h2>
+        <p>
+          If you have any questions or would like to work together, feel free to
+          contact me.
+        </p>
+        <a href="mailto:aayushxtech@gmail.com" class="contact-btn"
+          >Contact Me</a
+        >
+      </div>
+    </section>
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      });
+
+      document.querySelectorAll(".scroll-animation").forEach((section) => {
+        observer.observe(section);
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return; // Skip if href is just "#"
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
