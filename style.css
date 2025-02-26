@@ -42,6 +42,7 @@ body {
   align-items: center;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -376,15 +377,131 @@ body {
 
 /* Contact Section */
 .contact {
-  padding: 6rem 10%;
-  background: #081b29; /* Changed from #112e42 to darker #081b29 */
+  padding: 60px 10%;
+  background-color: #081b29; /* Darkened from #112e42 to match the main body background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-text {
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 700px;
 }
 
 .contact-text h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #00abf0; /* Changed to match site theme */
+}
+
+.contact-text p {
+  color: #fff; /* Changed to match site theme */
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #fff; /* Changed to match site theme */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #00abf0; /* Changed to match site theme */
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /* Made slightly more transparent */
+  color: #fff; /* Text color */
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #00abf0;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 171, 240, 0.5);
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #00abf0;
+  color: #081b29;
+  border: none;
+  border-radius: 4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.5s ease;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.contact-btn:hover {
+  background: #081b29;
   color: #00abf0;
-  text-align: center;
-  margin-bottom: 4rem;
+  box-shadow: 0 0 1rem #00abf0;
+  border: 2px solid #00abf0;
+  transform: translateY(-3px);
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 0 20px 20px;
+}
+
+.contact-item i {
+  font-size: 1.8rem;
+  color: #00abf0; /* Changed to match site theme */
+  margin-right: 10px;
+}
+
+.contact-item p {
+  color: #fff; /* Changed to match site theme */
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact {
+    padding: 40px 5%;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .contact-text {
@@ -417,14 +534,6 @@ body {
   box-shadow: 0 0 1rem #00abf0;
   border: 2px solid #00abf0;
   transform: translateY(-3px);
-}
-
-/* Remove old form styles since we're using mailto link now */
-form,
-form input,
-form textarea,
-form button {
-  display: none;
 }
 
 /* Responsive Design */
